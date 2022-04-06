@@ -1,0 +1,23 @@
+server:
+  port: ${SERVER_PORT}
+
+spring:
+  application:
+    name: microboot-web
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${MYSQL_HOST}
+    username: ${MYSQL_USER_NAME}
+    password: ${MYSQL_PASSWORD}
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  config:
+    import: optional:file:.env[.properties]
+  # 返回json的全局时间格式
+  jackson:
+    date-format: yyyy-MM-dd hh:mm:ss
+## mybatis日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
