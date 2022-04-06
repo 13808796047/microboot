@@ -24,11 +24,20 @@
         <mybatis_plus.version>3.5.1</mybatis_plus.version>
         <swagger.version>3.0.3</swagger.version>
         <org.mapstruct>1.4.2.Final</org.mapstruct>
+        <druid.version>1.2.6</druid.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
     </properties>
     <dependencyManagement>
         <dependencies>
+
+            <!-- 数据连接池 druid-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
             <!-- mybatis plus -->
             <dependency>
                 <groupId>com.baomidou</groupId>
@@ -54,7 +63,7 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
-             <optional>true</optional>
+                <optional>true</optional>
             </dependency>
         </dependencies>
     </dependencyManagement>
